@@ -5,9 +5,185 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  background: linear-gradient(90deg, rgba(71,69,107,1) 0%, rgba(38,152,175,1) 100%);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.custom-button-start,
+.custom-button-end,
+.custom-button-upload {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #2a2929;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 auto; /* Center the button horizontally */
+  min-height: 60px;
+  min-width: 70px; /* Let the button adjust its width based on content */
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  max-width: 200px; /* Set a maximum width for the button */
+  will-change: transform;
+}
+
+.custom-button-start:hover,
+.custom-button-end:hover,
+.custom-button-upload:hover {
+  background-color: #e4e6eb;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.header h1 {
+  text-align: center;
+  text-transform: capitalize;
+  position: relative; /* Add this to make the positioning relative */
+}
+
+
+.header h1:before {
+  position: absolute;
+  left: 50%; /* Center the line horizontally */
+  bottom: 0;
+  transform: translateX(-50%); /* Adjust for centering */
+  width: 60px;
+  height: 2px;
+  content: "";
+  background-color: #3a2047;
+}
+
+/* Style the subtitle (span) */
+.header h1 span {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 3em;
+  color: rgba(0, 0, 0, 0.4);
+  padding-left: 0.25em;
+  display: block;
+  text-align: center; /* Center the text within the header */
+  padding-bottom: 10px;
+}
+
+/* Center the alternate header text */
+.alt-header h1 {
+  text-align: center;
+}
+
+/* Style the line below the alternate header text */
+.alt-header h1:before {
+  left: 50%; /* Center the line horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+}
+
+
+.voice-recorder-container {
+  text-align: center;
+  position: relative; /* Make this container relative for absolute positioning of the red icon */
+
+}
+.voice-recorder-container button {
+  margin-right: 20px; /* Adjust the value as needed */
+} 
+.icon-red {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -100px; /* Adjust the distance from the buttons as needed */
+  width: 30px;
+  height: 30px;
+  
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+    width: 300%;
+    height: 300%;
+    box-sizing: border-box;
+    margin-left: -100%;
+    margin-top: -100%;
+    border-radius: 45px;
+    background-color: #e44141;
+    animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 0);
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,.3);
+    animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    transform: scale(.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
+
+.recording-duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -35px;
+  font-family: 'Your-Desired-Font-Family', sans-serif; 
+  font-size: 16px; 
+  font-weight: bold; 
+  color: #333; 
+}
+.total-duration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -35px;
+  font-family: 'Your-Desired-Font-Family', sans-serif; 
+  font-size: 16px; 
+  font-weight: bold; 
+  color: #333; 
+}
+
+

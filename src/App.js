@@ -4,8 +4,15 @@ import React, { useState, useRef } from 'react';
 function App() {
   return (
     <div>
-      <h2>xd</h2>
-      <VoiceRecorder />
+      <div class="header">
+        <h1>Voice Recorder
+          <span>Record Your Description</span>
+        </h1>
+      </div>
+      <div className="voice-recorder-container">
+        <VoiceRecorder />
+      </div>
+
     </div>
   )
 }
